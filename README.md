@@ -4,7 +4,7 @@
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 
 > Uncovering customer behaviour, data quality issues, and revenue drivers across a multi-table e-commerce dataset.
 
