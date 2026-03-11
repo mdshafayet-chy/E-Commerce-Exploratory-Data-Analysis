@@ -53,3 +53,99 @@ Ensure you have **Python 3.8+** installed, then install the required libraries:
 
 ```bash
 pip install pandas matplotlib seaborn jupyter
+```
+
+| Library | Purpose |
+|---|---|
+| `pandas` | Data manipulation, aggregation, and merging |
+| `matplotlib` | Base plots and custom visualisations |
+| `seaborn` | Statistical visualisation and theming |
+| `jupyter` | Interactive notebook environment |
+
+---
+
+## 🚀 How to Run
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/ecommerce-eda.git
+cd ecommerce-eda
+
+# 2. (Optional) Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate        # Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install pandas matplotlib seaborn jupyter
+
+# 4. Launch the notebook
+jupyter notebook eda.ipynb
+```
+
+---
+
+## 🧹 Data Cleaning & Integration
+
+Three-stage cleaning pipeline applied before merging:
+
+- **Duplicates removed** across all three tables (Customer IDs, Session IDs, Order IDs)
+- **Invalid entries dropped** — negative numerical values, invalid dates, and out-of-range fields
+- **Missing values handled** — categorical nulls filled with `"unknown"`, numerical nulls imputed with **median values**
+- **Tables merged** via a left join on `customer_id`, producing a clean, unified analytical dataset
+
+```
+Customers ──┐
+             ├──► Left Join on customer_id ──► 11,878 records
+Sessions  ──┘    (aggregated to customer level)
+             +
+Orders    ──►  Final Merged Dataset
+```
+
+---
+
+## 💡 Key Findings
+
+### 📊 Revenue Distribution
+- Revenue is **severely right-skewed** — mean (£388) is more than double the median (£180)
+- The **top 1% of customers** generate ≥ £2,941, representing a concentrated high-value segment
+- Gini coefficient of **0.643** confirms a strong Pareto revenue distribution
+
+### 🔗 Revenue Drivers
+
+| Feature Pair | Correlation (r) | Interpretation |
+|---|---|---|
+| Unit Price → Revenue | **0.74** | Strong — price is the primary driver |
+| Quantity → Revenue | 0.42 | Moderate — volume contributes but less |
+| Session Duration → Revenue | 0.007 | Negligible — browsing time ≠ spending |
+| Discount % → Revenue | −0.07 | Negligible — discounts don't drive value |
+
+### 📅 Conversion Behaviour
+- Conversion rates are **flat across all days of the week** (72.6% – 74.2% range)
+- No weekend uplift observed — promotions should target **product category and customer history**, not timing
+- Only **4.7% of all visitors** convert to a completed purchase
+
+### 📱 Device & Channel Insights
+- **Mobile leads** completed order volume (55%) but carries a higher return rate (17.8% vs 11.4% desktop)
+- **Referral** is the dominant acquisition channel (49%) — paid ads account for only 7.5%
+
+---
+
+## 📂 Repository Files
+
+```
+ecommerce-eda/
+│
+├── 📓 eda.ipynb                   ← Full Python EDA: cleaning, feature engineering,
+│                                     visualisations, and hypothesis testing
+│
+├── 📄 E-Commerce-EDA-Report.pdf  ← Visual summary of methodology, distributions,
+│                                     and final business verdicts
+│
+└── 📘 README.md                   ← Project documentation (you are here)
+```
+
+---
+
+<p align="center">
+  Made with 🐍 Python &nbsp;|&nbsp; 🐼 Pandas &nbsp;|&nbsp; 📊 Seaborn &nbsp;|&nbsp; 📓 Jupyter
+</p>
