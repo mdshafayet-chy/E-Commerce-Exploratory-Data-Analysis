@@ -132,17 +132,27 @@ Orders    ──►  Final Merged Dataset
 
 ## 📂 Repository Files
 
+## 📂 Repository Files
+## 📂 Repository Files
+
 ```
 ecommerce-eda/
+│
+├── 📁 data/                       ← Dataset files used in the analysis
+│   ├── customers.csv                  (5,050 records)
+│   ├── sessions.csv                   (30,150 records)
+│   ├── orders.csv                     (12,100 records)
+│   └── merged_df.csv                  (11,878 records — final cleaned & merged dataset)
 │
 ├── 📓 eda.ipynb                   ← Full Python EDA: cleaning, feature engineering,
 │                                     visualisations, and hypothesis testing
 │
-├── 📄 E-Commerce-EDA-Report.pdf  ← Visual summary of methodology, distributions,
+├── 📄 E-Commerce-EDA-Report1.pdf  ← Visual summary of methodology, distributions,
 │                                     and final business verdicts
 │
 └── 📘 README.md                   ← Project documentation (you are here)
 ```
+
 
 ---
 
