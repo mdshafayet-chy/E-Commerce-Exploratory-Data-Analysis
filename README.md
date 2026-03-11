@@ -19,7 +19,6 @@
 - [Data Cleaning & Integration](#-data-cleaning--integration)
 - [Key Findings](#-key-findings)
 - [Repository Files](#-repository-files)
-- [License](#-license)
 
 ---
 
